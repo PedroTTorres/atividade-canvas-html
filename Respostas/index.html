@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="a1" width="300" height="250" style="border: 1px solid black">
+    </canvas>
+    <canvas id="a2" width="300" height="250" style="border: 1px solid black">
+    </canvas>
+    <canvas id="a3" width="300" height="250" style="border: 1px solid black">
+    </canvas>
+</body>
+
+<script>
+
+var canvas = document.getElementById("a1");
+var retangle = canvas.getContext("2d");
+var triangle = canvas.getContext("2d");
+
+retangle.beginPath();
+retangle.strokeStyle = "blue";
+retangle.strokeRect(50, 50, 200, 150);
+
+triangle.beginPath();
+triangle.moveTo(150, 75);
+triangle.lineTo(225, 150);
+triangle.lineTo(75, 150);
+triangle.fillStyle = "blue"
+triangle.fill();
+
+
+</script>
+
+
+</html>
