@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type='text/javascript'>//<![CDATA[ 
+window.onload=function(){
+var x=120;
+var y=120;
+var key,pos=0;
+var canvas=document.getElementById("canvas");
+
+var redCircle=canvas.getContext("2d");
+redCircle.beginPath();
+
+document.onkeydown=function(e)
+{
+  pos=1;
+  key=window.event?e.keyCode:e.which;
+}
+document.onkeyup=function(e){pos=0;}
+setInterval(function()
+{
+  if(pos==0)return;
+  if(key==37 && x > -50)x-=2;
+  if(key==38 && y > -50)y-=2;
+  if(key==39 && x < canvas.width-100)x+=2;
+  if(key==40 && y < canvas.height-100)y+=2;
+    canvas.width=canvas.width;
+    redCircle.arc(x, y, 50, 0, Math.PI * 2, false);
+      redCircle.fillStyle = "Red";
+      redCircle.fill();
+
+},5);
+}//]]>  
+</script>
+</head>
+<body>
+  <canvas id="canvas" width="500" height="500" ></canvas>
+  <style>
+    canvas{border:1px solid rgb(92, 83, 83);}
+  </style>
+</body>
+</html>
